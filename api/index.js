@@ -7,11 +7,11 @@ module.exports = async (req, res) => {
     if (!url) {
       return res.status(400).json({
         success: false,
-        message: "Missing query param `url`. Example: /?url=Hello+World"
+        message: "Missing query param `url`"
       });
     }
 
-    const KAIZ_APIKEY = "7eac9dce-b646-4ad1-8148-5b58eddaa2cc";
+    const KAIZ_APIKEY = process.env.KAIZ_APIKEY || "7eac9dce-b646-4ad1-8148-5b58eddaa2cc";
     const providerUrl = `https://kaiz-apis.gleeze.com/api/qrcode-generator?text=${encodeURIComponent(url)}&apikey=${KAIZ_APIKEY}`;
 
     const providerResp = await axios.get(providerUrl, {
