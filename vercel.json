@@ -1,12 +1,12 @@
 {
   "version": 2,
   "functions": {
-    "index.js": {
+    "api/index.js": {
       "memory": 128,
       "maxDuration": 10
     }
   },
   "rewrites": [
-    { "source": "/", "destination": "/index.js" }
+    { "source": "/", "destination": "/api/index.js" }
   ]
 }
